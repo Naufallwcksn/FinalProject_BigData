@@ -8,7 +8,7 @@ Proyek akhir ini bertujuan untuk menganalisis data kualitas udara dari enam kota
 - **Metode:** Eksplorasi Data, Statistik Deskriptif, Korelasi  
 - **Tools:** Python, Pandas, Matplotlib, Seaborn, Streamlit  
 - **Sumber Data:** [Global Air Quality Dataset - Kaggle](https://www.kaggle.com/datasets/youssefelebiary/global-air-quality-2023-6-cities)  
-- **Kota yang Dianalisis:** Delhi, Los Angeles, London, Mumbai, Beijing, Paris  
+- **Kota yang Dianalisis:** Brasillia, Cairo, Dubai, London, New York, Sydney  
 
 ## 🚀 Fitur Utama Dashboard
 
