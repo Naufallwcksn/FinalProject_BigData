@@ -324,6 +324,51 @@ with tab4:
             use_container_width=True
         )
 
+# --------------------------------------------------------------------------------------------------
+# ✨ SECTION: Prediksi AQI dari Input PM2.5 & PM10
+# --------------------------------------------------------------------------------------------------
+st.markdown("---")
+st.header("🧮 Prediksi AQI Berdasarkan Input Manual")
+
+# Form input
+col_input1, col_input2, col_input3 = st.columns([1, 1, 2])
+
+with col_input1:
+    pm25_input = st.number_input("Masukkan nilai PM2.5", min_value=0.0, value=50.0, step=1.0)
+
+with col_input2:
+    pm10_input = st.number_input("Masukkan nilai PM10", min_value=0.0, value=80.0, step=1.0)
+
+with col_input3:
+    st.markdown("### ")
+    if st.button("🔍 Prediksi AQI"):
+        try:
+            import joblib
+            model = joblib.load("model_aqi.pkl")  # Pastikan model tersimpan dengan nama ini
+            input_data = pd.DataFrame({
+                "PM2.5": [pm25_input],
+                "PM10": [pm10_input]
+            })
+            pred_aqi = model.predict(input_data)[0]
+            st.success(f"🎯 Prediksi AQI: **{pred_aqi:.2f}**")
+
+            # Interpretasi kategori AQI
+            if pred_aqi <= 50:
+                kategori = "🟢 Baik"
+            elif pred_aqi <= 100:
+                kategori = "🟡 Sedang"
+            elif pred_aqi <= 150:
+                kategori = "🟠 Tidak Sehat untuk Kelompok Sensitif"
+            elif pred_aqi <= 200:
+                kategori = "🔴 Tidak Sehat"
+            else:
+                kategori = "🟣 Sangat Tidak Sehat / Berbahaya"
+
+            st.info(f"Kategori Kualitas Udara: **{kategori}**")
+
+        except Exception as e:
+            st.error(f"❌ Gagal melakukan prediksi. Pastikan file model `model_aqi.pkl` tersedia. \n\nError: {e}")
+
 # Footer
 st.markdown("---")
 st.markdown("""
