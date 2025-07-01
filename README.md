@@ -5,8 +5,8 @@ Proyek akhir ini bertujuan untuk menganalisis data kualitas udara dari enam kota
 ## 📊 Ringkasan Proyek
 
 - **Judul:** Analisis Tren dan Pola Kualitas Udara di Enam Kota Global Tahun 2023  
-- **Metode:** Eksplorasi Data, Statistik Deskriptif, Korelasi  
-- **Tools:** Python, Pandas, Matplotlib, Seaborn, Streamlit  
+- **Metode:** Analisis dan pengolahan data, Visualisasi data, Machine learning, Pembuatan dashboard interaktivitas  
+- **Tools:** Python, Pandas, Matplotlib, Scikit-learn, Seaborn, Joblib, Streamlit, Plotly express  
 - **Sumber Data:** [Global Air Quality Dataset - Kaggle](https://www.kaggle.com/datasets/youssefelebiary/global-air-quality-2023-6-cities)  
 - **Kota yang Dianalisis:** Brasillia, Cairo, Dubai, London, New York, Sydney  
 
@@ -16,3 +16,5 @@ Proyek akhir ini bertujuan untuk menganalisis data kualitas udara dari enam kota
 - Perbandingan rata-rata kualitas udara antar kota
 - Heatmap korelasi antar variabel pencemar
 - Filter interaktif berdasarkan kota dan jenis polutan
+- Memprediksi AQI berdasarkan input yang dilakukan
+- Informasi kota dengan kualitas udara terbaik dan terburuk
