@@ -190,11 +190,11 @@ st.markdown("""
 # Load data (simulasi - ganti dengan path file Anda)
 @st.cache_data
 def load_data():
-    return pd.read_csv("FinalProject_BigData/Air_Quality.csv")
+    return pd.read_csv("Air_Quality.csv")
 
 df = load_data()
 
-model = joblib.load('FinalProject_BIgData/model_aqi.pkl')
+model = joblib.load('model_aqi.pkl')
 
 # Konversi kolom tanggal
 df["Date"] = pd.to_datetime(df["Date"])
