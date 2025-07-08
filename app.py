@@ -518,20 +518,15 @@ with tab4:
     st.markdown('<div class="prediction-container">', unsafe_allow_html=True)
     st.markdown("### 🤖 AI-Powered AQI Prediction")
     
-    col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(2)
     with col1:
-        co_input = st.number_input("Input Nilai CO", min_value=0.0, value=250.0)
-        no2_input = st.number_input("Input Nilai NO2", min_value=0.0, value=30.0)
-    with col2:
-        so2_input = st.number_input("Input Nilai SO2", min_value=0.0, value=10.0)
-        o3_input = st.number_input("Input Nilai O3", min_value=0.0, value=50.0)
-    with col3:
         pm25_input = st.number_input("Input Nilai PM2.5", min_value=0.0, value=20.0)
+    with col2:
         pm10_input = st.number_input("Input Nilai PM10", min_value=0.0, value=40.0)
     
     if st.button("🚀 Prediksi AQI dengan AI", type="primary"):
         # Simulasi prediksi ML (ganti dengan model yang sebenarnya)
-        X_input = np.array([[co_input, no2_input, so2_input, o3_input, pm25_input, pm10_input]])  # atau termasuk CO jika modelmu pakai
+        X_input = np.array([[pm25_input, pm10_input]])  # atau termasuk CO jika modelmu pakai
         predicted_aqi = model.predict(X_input)[0]
         
         # Tampilkan hasil dengan styling menarik
